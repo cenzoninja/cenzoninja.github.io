@@ -32,7 +32,7 @@
     // Draw a rectangle
     context.fillStyle = randomColor;
     context.beginPath();
-    context.arc(Math.random*750, Math.random*400, Math.random*150, 0, 2 * Math.PI);
+    context.arc(Math.random()*750, Math.random()*400, Math.random()*150, 0, 2 * Math.PI);
     context.fill();
     }
 </script>
