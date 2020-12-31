@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>New webpage</title>
+        <title>lazer battle</title>
     </head>
     <body>
         <canvas id="canvas" width="750" height="400" style="border:1px solid lightgrey;">
