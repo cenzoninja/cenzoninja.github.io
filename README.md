@@ -35,11 +35,6 @@
     context.arc(Math.random()*750, Math.random()*400, Math.random()*150, 0, 2 * Math.PI);
     context.strokeStyle = Math.random() > 0.5? '#ff8080' : '#0099b0';
     context.fill();
-    context.stroke();
-    context.beginPath();
-    context.moveTo(200, 100);
-    context.lineTo(250, 90);
-    context.lineTo(250, 50);
     context.lineWidth = 5;
     context.stroke();
     
