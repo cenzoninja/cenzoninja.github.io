@@ -23,7 +23,12 @@
 
         draw();
     }
+    window.requestAnimationFrame(gameloop);
+    function gameloop() {
+    draw();
     
+    window.requestAnimationFrame(gameloop);
+    };
     function draw(){
 
     // Get a random color, red or blue
