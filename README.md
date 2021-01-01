@@ -13,18 +13,24 @@
     "use strict";
     let canvas;
     let context;
-
+    let oldTimeStamp;
+    let fps;
+    let secondsPassed;
     window.onload = init;
 
     function init(){
         // Get a reference to the canvas
         canvas = document.getElementById('canvas');
         context = canvas.getContext('2d');
-
+        window.requestAnimationFrame(gameloop);
         draw();
     }
-    window.requestAnimationFrame(gameloop);
-    function gameloop() {
+    function gameloop(timeStamp) {
+    secondsPassed = (timeStamp - oldTimeStamp) / 1000;
+    oldTimeStamp = timeStamp;
+    fps = Math.round(1 / secondsPassed);
+    context.fillStyle = "white";
+    fillText("FPS: " + fps, 10, 30);
     draw();
     
     window.requestAnimationFrame(gameloop);
