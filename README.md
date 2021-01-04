@@ -34,10 +34,11 @@
     
     fps = Math.round(1 / secondsPassed);
     
+    draw();
+    
     context.fillStyle = '006600';
     context.fillText("FPS: " + fps, 10, 30);
     
-    draw();
     
     window.requestAnimationFrame(gameloop);
     };
