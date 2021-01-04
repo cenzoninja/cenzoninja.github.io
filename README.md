@@ -26,11 +26,6 @@
         draw();
     }
     function gameloop(timeStamp) {
-    secondsPassed = (timeStamp - oldTimeStamp) / 1000;
-    oldTimeStamp = timeStamp;
-    fps = Math.round(1 / secondsPassed);
-    context.fillStyle = "white";
-    fillText("FPS: " + fps, 10, 30);
     draw();
     
     window.requestAnimationFrame(gameloop);
