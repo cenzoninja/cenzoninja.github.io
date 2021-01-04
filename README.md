@@ -23,8 +23,7 @@
         canvas = document.getElementById('canvas');
         context = canvas.getContext('2d');
         window.requestAnimationFrame(gameloop);
-        draw();
-    }
+    };
     function gameloop(timeStamp) {
     draw();
     
@@ -44,7 +43,7 @@
     context.lineWidth = 5;
     context.stroke();
     
-    }
+    };
 </script>
     </body>
 </html>
