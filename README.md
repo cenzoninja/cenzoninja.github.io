@@ -18,8 +18,8 @@
     let fps;
     let timePassed = 0;
     let secondsPassed;
-    let rectY = 200;
-    let rectX = 375;
+    let rectY = 0;
+    let rectX = 0;
     function init(){
         // Get a reference to the canvas
         canvas = document.getElementById('canvas');
@@ -48,12 +48,12 @@
     window.requestAnimationFrame(gameloop);
     }
     
-    //function update() {
+    function update() {
         //timePassed += secondsPassed;
         
-        //rectX = Math.sin(timePassed) * 100 + 375;
-        //rectY = Math.sin(timePassed) * 100 + 200;
-    //}
+        rectX += 1;
+        rectY += 1;
+    }
     
     function draw(){
 
