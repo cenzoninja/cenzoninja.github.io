@@ -28,6 +28,7 @@
     function gameloop(timeStamp) {
     
     secondsPassed = (timeStamp - oldTimeStamp) / 1000;
+    oldTimeStamp = timeStamp;
     
     draw();
     
