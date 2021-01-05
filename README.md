@@ -51,8 +51,8 @@
     function update() {
         timePassed += secondsPassed;
         
-        rectX = Math.sin(timePassed) * 200 + 375;
-        rectY = Math.sin(timePassed) * 200 + 200;
+        rectX = Math.sin(timePassed) * 100 + 375;
+        rectY = Math.sin(timePassed) * 100 + 200;
     }
     
     function draw(){
