@@ -41,19 +41,19 @@
     context.fillStyle = '#006600';
     context.fillText("FPS: " + fps, 10, 30);
     
-    update();
+    //update();
     draw();
     
     
     window.requestAnimationFrame(gameloop);
     }
     
-    function update() {
+    //function update() {
         //timePassed += secondsPassed;
         
         //rectX = Math.sin(timePassed) * 100 + 375;
         //rectY = Math.sin(timePassed) * 100 + 200;
-    }
+    //}
     
     function draw(){
 
