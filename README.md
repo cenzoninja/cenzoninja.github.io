@@ -51,8 +51,8 @@
     function update() {
         //timePassed += secondsPassed;
         
-        rectX += 1;
-        rectY += 1;
+        rectX += 5;
+        rectY += 5;
     }
     
     function draw(){
@@ -63,7 +63,7 @@
     // Draw a rectangle
     context.fillStyle = randomColor;
     context.beginPath();
-    context.arc(rectX, rectY, Math.random()*100, 0, 2 * Math.PI);
+    context.arc(rectX, rectY, Math.random()*25+75, 0, 2 * Math.PI);
     context.strokeStyle = Math.random() > 0.5? '#ff8080' : '#0099b0';
     context.fill();
     context.lineWidth = 5;
