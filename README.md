@@ -41,7 +41,7 @@
     context.fillStyle = '#006600';
     context.fillText("FPS: " + fps, 10, 30);
     
-    //update();
+    update();
     draw();
     
     
