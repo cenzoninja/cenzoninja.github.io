@@ -18,8 +18,8 @@
     let fps;
     let timePassed = 0;
     let secondsPassed;
-    let rectY = 0;
-    let rectX = 0;
+    let rectY = 200;
+    let rectX = 375;
     function init(){
         // Get a reference to the canvas
         canvas = document.getElementById('canvas');
@@ -49,10 +49,10 @@
     }
     
     function update() {
-        timePassed += secondsPassed;
+        //timePassed += secondsPassed;
         
-        rectX = Math.sin(timePassed) * 100 + 375;
-        rectY = Math.sin(timePassed) * 100 + 200;
+        //rectX = Math.sin(timePassed) * 100 + 375;
+        //rectY = Math.sin(timePassed) * 100 + 200;
     }
     
     function draw(){
