@@ -46,7 +46,7 @@
     window.requestAnimationFrame(gameloop);
     };
     function update() {
-        rectX += 1;
+        rectX += 60 / fps;
         rectY += 1;
     }
     function draw(){
