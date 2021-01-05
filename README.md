@@ -16,6 +16,7 @@
     window.onload = init;
     let oldTimeStamp;
     let fps;
+    let timePassed = 0;
     let secondsPassed;
     let rectY = 0;
     let rectX = 0;
@@ -30,6 +31,7 @@
     
     secondsPassed = (timeStamp - oldTimeStamp) / 1000;
     oldTimeStamp = timeStamp;
+    secondsPassed = Math.min(secondsPassed, 0.1);
     
     fps = Math.round(1 / secondsPassed);
     
@@ -44,11 +46,15 @@
     
     
     window.requestAnimationFrame(gameloop);
-    };
-    function update() {
-        rectX += 60 / fps;
-        rectY += 1;
     }
+    
+    function update() {
+        timePassed += secondsPassed;
+        
+        rectX = Math.sin(timePassed) * 200 + 375;
+        rectY = Math.sin(timePassed) * 200 + 200;
+    }
+    
     function draw(){
 
     // Get a random color, red or blue
