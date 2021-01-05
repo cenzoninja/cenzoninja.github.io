@@ -28,7 +28,7 @@
     function gameloop(timeStamp) {
     
     
-    sencondsPassed = (timeStamp - oldTimeStamp) / 1000;
+    secondsPassed = (timeStamp - oldTimeStamp) / 1000;
     oldTimeStamp = timeStamp;
     
     
@@ -50,7 +50,7 @@
     // Draw a rectangle
     context.fillStyle = randomColor;
     context.beginPath();
-    context.arc(Math.random()*750, Math.random()*400, Math.random()*150, 0, 2 * Math.PI);
+    context.arc(375, 200, Math.random()*100, 0, 2 * Math.PI);
     context.strokeStyle = Math.random() > 0.5? '#ff8080' : '#0099b0';
     context.fill();
     context.lineWidth = 5;
