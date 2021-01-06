@@ -52,7 +52,7 @@
         timePassed += secondsPassed;
         
         rectX = easeInElastic(timePassed, 200, 300, 2);
-        rectY = easeInElastic(timePassed, 200, 300, 2);
+        rectY =0;
     }
     function easeInElastic (t, b, c, d) {
     var s = 1.70158;
