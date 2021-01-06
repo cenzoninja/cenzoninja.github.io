@@ -26,63 +26,75 @@
         context = canvas.getContext('2d');
         window.requestAnimationFrame(gameloop);
     };
-    // game loop here
-    function gameloop(timeStamp) {
     
-    secondsPassed = (timeStamp - oldTimeStamp) / 1000;
-    oldTimeStamp = timeStamp;
-    secondsPassed = Math.min(secondsPassed, 0.1);
-    
-    fps = Math.round(1 / secondsPassed);
-    
-    context.fillStyle = 'white';
-    context.fillRect(0, 0, 750, 400);
-    context.font = "25px Arial";
-    context.fillStyle = '#006600';
-    context.fillText("FPS: " + fps, 10, 30);
-    
-    update();
-    draw();
-    
-    
-    window.requestAnimationFrame(gameloop);
+    class GameObject
+    {
+        constructor (context, x, y, vx, vy){
+            this.context = context;
+            this.x = x;
+            this.y = y;
+            this.vx = vx;
+            this.vy = vy;
+            
+            this.isColliding = false;
+        }
     }
+    class Square extends GameObject
+        {
     
-    function update() {
-        timePassed += secondsPassed;
+        static width = 50;
+        static height = 50;
+    
+        constructor (context, x, y, vx, vy){
+            super(context, x, y, vx, vy);
+        }
+        function update(secondsPassed) {
+            this.x += this.vx * secondsPassed;
+            this.y += this.vy * secondsPassed;
+        }
+    
+        function draw(){
+            // Draw a rectangle
+            this.context.fillStyle = this.isColliding?'#ff8080':'#0099b0';
+            this.context.fillRect(this.x, this.y, Square.width, Square.height);
+        }
+    }
+    let gameObjects;
+
+    function createWorld(){
+        gameObjects = [
+            new Square(context, 250, 50, 0, 50),
+            new Square(context, 250, 300, 0, -50),
+            new Square(context, 150, 0, 50, 50),
+            new Square(context, 250, 150, 50, 50),
+            new Square(context, 350, 75, -50, 50),
+            new Square(context, 300, 300, 50, -50)
+        ];
+    }
+   function gameloop(timeStamp) {
+    
+        secondsPassed = (timeStamp - oldTimeStamp) / 1000;
+        oldTimeStamp = timeStamp;
+        secondsPassed = Math.min(secondsPassed, 0.1);
+        fps = Math.round(1 / secondsPassed);
+    
+        for (let i = 0; i < gameObject.length; i++){
+            gameObjects[i].update(secondsPassed);
+        }
         
-        rectX = 0;
-        rectY = 0;
-    }
-    function easeInElastic (t, b, c, d) {
-    var s = 1.70158;
-    var p = 0;
-    var a = c;
-    if (t == 0) return b;
-    if ((t /= d) == 1) return b + c;
-    if (!p) p = d * .3;
-    if (a < Math.abs(c)) {
-        a = c;
-        var s = p / 4;
-    }
-    else var s = p / (2 * Math.PI) * Math.asin(c / a);
-    return -(a * Math.pow(2, 10 * (t -= 1)) * Math.sin((t * d - s) * (2 * Math.PI) / p)) + b;
-    }
-    function draw(){
-
-    // Get a random color, red or blue
-    let randomColor = Math.random() > 0.5? '#ff8080' : '#0099b0';
-
-    // Draw a rectangle
-    context.fillStyle = randomColor;
-    context.beginPath();
-    context.arc(rectX, rectY, Math.random()*10+90, 0, 2 * Math.PI);
-    context.strokeStyle = Math.random() > 0.5? '#ff8080' : '#0099b0';
-    context.fill();
-    context.lineWidth = 5;
-    context.stroke();
+        context.fillStyle = 'white';
+        context.fillRect(0, 0, 750, 400);
+        context.font = "25px Arial";
+        context.fillStyle = '#006600';
+        context.fillText("FPS: " + fps, 10, 30);
     
-    };
+        for (let i = 0; i < gameObjects.length; i++) {
+            gameObjects[i].draw();
+        }
+    
+        window.requestAnimationFrame(gameloop);
+    } 
+    
 </script>
     </body>
 </html>
