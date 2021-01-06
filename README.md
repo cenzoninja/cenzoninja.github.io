@@ -51,10 +51,12 @@
     function update() {
         timePassed += secondsPassed;
         
-        rectX += 0;
-        rectY += 0;
+        rectX = SINE(10, 50, 375);
+        rectY = SINE(10, 50, 200);
     }
-    
+    function SINE (s, b, a) {
+    return ((Math.sin(timePassed * s) * b) + a;
+    }
     function draw(){
 
     // Get a random color, red or blue
