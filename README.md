@@ -51,8 +51,8 @@
     function update() {
         timePassed += secondsPassed;
         
-        rectX = easeInElastic(0, 200, 300, 2);;
-        rectY = easeInElastic(0, 200, 300, 2);
+        rectX = easeInElastic(timePassed, 200, 300, 2);
+        rectY = easeInElastic(timePassed, 200, 300, 2);
     }
     function easeInElastic (t, b, c, d) {
     var s = 1.70158;
