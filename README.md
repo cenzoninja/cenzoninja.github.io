@@ -49,10 +49,10 @@
     }
     
     function update() {
-        //timePassed += secondsPassed;
+        timePassed += secondsPassed;
         
-        rectX += 5;
-        rectY += 5;
+        rectX = (Math.sin(timePassed) * 50) + 375;
+        rectY = (Math.sin(timePassed) * 50) + 200;
     }
     
     function draw(){
