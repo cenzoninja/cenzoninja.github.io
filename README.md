@@ -76,11 +76,11 @@ loop = function() {
 
   }
 
-  rectangle.y_velocity += 3;// gravity
+  rectangle.y_velocity += 5;// gravity
   rectangle.x += rectangle.x_velocity;
   rectangle.y += rectangle.y_velocity;
   rectangle.x_velocity *= 0.9;// friction
-  rectangle.y_velocity *= 0.9;// friction
+  //rectangle.y_velocity *= 0.9;// friction
 
   // if rectangle is falling below floor line
   if (rectangle.y > 540 - 16 - 32) {
