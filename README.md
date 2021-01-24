@@ -59,7 +59,7 @@ loop = function() {
 
   if (controller.up && rectangle.jumping == false) {
 
-    rectangle.y_velocity -= 80;
+    rectangle.y_velocity -= 60;
     rectangle.jumping = true;
 
   }
