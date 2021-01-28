@@ -106,7 +106,7 @@ loop = function() {
 
   }
 
-  context.fillStyle = "#202020";
+  context.fillStyle = "#151515";
   context.fillRect(0, 0, 960, 540);// x, y, width, height
   context.fillStyle = "#ff0000";// hex for red
   context.beginPath();
