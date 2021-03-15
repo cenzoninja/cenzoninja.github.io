@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>Plane Turn</title>
-    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <canvas id="canvas1"></canvas>
